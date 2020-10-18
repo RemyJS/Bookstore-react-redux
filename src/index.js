@@ -13,10 +13,14 @@ import store from "./store";
 const bookstoreService = new BookstoreService();
 
 ReactDom.render(
+  // Доступ к redux store
   <Provider store={store}>
+    {/* Обработка ошибок */}
     <ErrorBoundry>
+      {/* Передачва сервиса через ContextApi */}
       <BookstoreServiceProvider value={bookstoreService}>
         <Router>
+          {/* Приложение */}
           <App />
         </Router>
       </BookstoreServiceProvider>
